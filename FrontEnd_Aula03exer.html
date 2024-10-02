@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ 
+ //==================================ADVINHE O NUMERO========================================================
+/*        function chute(numero) {
+                    numeroPensado = 55;
+                    numchute = 3
+                    cont = 1
+
+                    do {             
+                            
+                        if ((numero != numeroPensado) && (cont<=numchute)) { 
+                            ganhou = prompt("Ainda não acertou, informe outro numero" + cont);
+                            cont += 1                   
+                            continue; // Continua para a próxima iteração do loop
+                        } else {
+                            if((numero == numeroPensado) && (cont<=numchute)){
+                                ganhou= "Acertou!!!"
+                            }
+                            else{
+                                ganhou =("Você não acertou o número era  " + numeroPensado)
+                            }
+
+
+                            return ganhou;
+                        }
+                    } while (numero != numeroPensado);
+                }
+   
+    numero = Number(prompt("Digite um valor" ))
+    window.alert(chute(numero))
+
+*/
+//==============================================PEDRA PAPEL TESOURA========================================================
+/*       function jogo(valor) {
+                    let escolhaComp
+                    let resultado        
+                    do {             
+                        let aleatorio = Math.floor(Math.random()*3)
+                        switch(aleatorio){
+                            case 0:
+                                escolhaComp = 'Pedra'
+                                break;    
+                            case 1:
+                                escolhaComp = "Papel"
+                                break
+                            default:
+                                escolhaComp = "Tesoura"    
+                        }    
+                        if((valor === "Pedra" && escolhaComp ==="Tesoura")||
+                            (valor === "Papel" && escolhaComp === "Pedra")||
+                            (valor === "Tesoura" && escolhaComp === "Papel")){
+                                resultado = "Usuário Ganhou"
+                            }
+                        else   
+                            if(valor === escolhaComp){
+                                resultado = "Empate!"
+                            } 
+                            else{
+                                resultado = "Computador ganhou"
+                            }   
+                        alert(" usuário " + valor +" computador " +escolhaComp+ " Resultado "+ resultado);
+                    } while (resultado === "Empate");
+                }
+   
+    valor = (prompt("Digite um valor  Pedra, papel, tesoura" ))
+    window.alert(jogo(valor))
+*/
+/*
+//=======================================FIBONACCI============================================
+function Fibonacci(valor){
+// Inicializamos os dois primeiros números da sequência
+let a = valor;
+let b = 1;
+
+// Imprimimos os dois primeiros números
+alert(a);
+alert(b);
+
+// Calculamos e imprimimos os próximos 8 números da sequência
+for (let i = 2; i < 10; i++) {
+    let nextFib = a + b;
+    alert(nextFib);
+    a = b;
+    b = nextFib;
+
+}}
+valor = 0
+alert(Fibonacci(valor))
+*/
+//=======================================taboada============================================
+
+function imprimirTabuada(numero) {
+    if (numero >= 1 && numero <= 9) {
+        console.log(`Tabuada do ${numero}:`);
+
+        for (let i = 1; i <= 10; i++) {
+            console.log(`${numero} x ${i} = ${numero * i}`);
+        }
+    } else {
+        alert("Número inválido. Por favor, digite um número de 1 a 9.");
+    }
+}
+
+let numero = parseInt(prompt("Digite um número de 1 a 9 para ver sua tabuada:"));
+imprimirTabuada(numero);
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="exemplos">Integração do JS com HTML e CSS</h2>
+
+    <fieldset class="conteiner-exemplos">
+
+        <div class="conteiner-mensagem">
+
+            <h2 id="exemplo-lista">Lista</h2>
+
+            <label for="nome" class="item label">Nome</label>
+            <input id="nome" class="item campo" type="text" />
+        
+            <button id="btn-mensagem" class="item botao">Enviar</button>
+            <p>
+            <label for="mensagem" class="item label">Mensagem</label>
+            <p id="mensagem" class="item saida"></p>    
+
+            <ol id="lista" class="item"></ol>   
+
+
+            <div class="conteiner-calculadora">
+
+                <h2 id="exemplo-calculadora">Calculadora</h2>
+    
+                <label for="n1" class="item label">Primeiro número</label>
+                <input id="n1" class="item campo" type="text" />
+    
+                <label for="n2" class="item label">Segundo número</label>
+                <input id="n2" class="item campo" type="text" />
+        
+                <p class="label">Operações</p>
+                <div>
+                    <input type="radio" id="somar" name="operacoes" value="somar" checked/>
+                    <label for="somar">Somar</label>
+                </div>                                                                                    
+                <div>
+                    <input type="radio" id="subtrair" name="operacoes" value="subtrair" />
+                    <label for="subtrair">Subtrair</label>
+                </div>
+                <div>
+                    <input type="radio" id="multiplicar" name="operacoes" value="multiplicar" />
+                    <label for="multiplicar">Multiplicar</label>
+                </div>
+                <div>
+                    <input type="radio" id="dividir" name="operacoes" value="dividir" />
+                    <label for="dividir">Dividir</label>
+                </div>
+    
+                <button id="btn-calcular" class="item botao">Calcular</button>
+    
+                <button id="btn-limpar" class="item botao">Limpar</button>
+            
+                <label for="resultado" class="item label">Resultado</label>
+                <p id="resultado" class="item saida"></p>    
+    
+            </div>
+
+
+
+
+            <script >
+                /* Exemplo Lista */
+
+            // Obtém as referências dos elementos HTML
+            let nome = document.getElementById("nome")
+            let mensagem = document.getElementById("mensagem")
+            let lista = document.getElementById("lista")
+            let btnMensagem = document.getElementById("btn-mensagem")
+            // Vincula o evento click do botão a execução da função literal listar
+            btnMensagem.addEventListener("click", listar)
+
+
+            function listar() { 
+                // Apresenta a mensagem
+                mensagem.innerHTML = "Olá! " + nome.value
+                // Cria um elemento HTML li e atribui na variável item
+                let item = document.createElement("li")
+                // Acrescenta o nome digitado no item
+                item.innerHTML = nome.value
+                // Insere o novo elemento item (li) como filho do elemento lista (ol) 
+                // já existente no documento HTML
+                lista.appendChild(item)
+                // Limpa o input
+                nome.value = ""
+                // E posiciona o curso para a próxima inserção
+                nome.focus()
+            }
+            
+
+/* Exemplo Calculadora */
+
+let numero1 = document.getElementById("n1")
+let numero2 = document.getElementById("n2")
+let soma = document.getElementById("somar")
+let subtracao = document.getElementById("subtrair")
+let multiplicacao = document.getElementById("multiplicar")
+let divisao = document.getElementById("dividir")
+let resultado = document.getElementById("resultado")
+
+let btnCalcular = document.getElementById("btn-calcular")
+btnCalcular.addEventListener("click", calcular)
+
+let btnLimpar = document.getElementById("btn-limpar")
+btnLimpar.addEventListener("click", limpar)
+
+// Variável utilizada em mais de uma função
+let r
+
+function somar(num1, num2){
+    return num1 + num2
+}
+
+function subtrair(num1, num2){
+    return num1 - num2
+}
+
+function multiplicar(num1, num2){
+    return num1 * num2
+}
+
+function dividir(num1, num2){
+    return num1 / num2
+}
+
+function calcular() { 
+
+    let n1, n2
+
+    if( !numeroValido(numero1) ) { // se retornar false interrompe a execução da função
+        return
+    } else {
+        n1 = numeroValido(numero1)
+    }
+
+    if( !numeroValido(numero2) ) {
+        return
+    } else {
+        n2 = numeroValido(numero2)
+    }
+
+    // if ternário encadeado
+    r = soma.checked ? somar(n1, n2) : 
+        subtracao.checked ? subtrair(n1, n2) :
+        multiplicacao.checked ? multiplicar(n1, n2) :
+        divisao.checked ? dividir(n1, n2) : null
+
+    resultado.innerHTML = r
+    cores(r)
+}
+
+function numeroValido(elemento){
+
+    if ( elemento.value == "" || isNaN(elemento.value) ) {
+        alert("Informe somente o números.")
+        elemento.focus()
+        return false
+    } 
+    
+    if (elemento.value == 0) {
+        alert("Informe números (positivos ou negativos) diferentes de zero.")
+        elemento.focus()
+        return false
+    } 
+
+    if (elemento.value < -10000 || elemento.value > 10000) {
+        alert("Informe números com no máximo 4 digitos.")
+        elemento.focus()
+        return false
+    } 
+
+    return Number( elemento.value )
+}
+
+function limpar() {
+    numero1.value = ""
+    numero2.value = ""
+    resultado.innerHTML = ""
+    soma.checked = true
+    resultado.style.color = "#000"
+    resultado.style.background = "#fff"
+    numero1.focus()
+}
+
+
+function cores(r){
+
+    resultado.style.color = "#fff"
+
+    r > 0 ? resultado.style.background = '#386641' : resultado.style.background = '#d90429'
+}
+                
+
+            </script> 
+
+        </div>
+
+</body>
+</html>

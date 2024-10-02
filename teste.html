@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function somarVarios(n1, n2, n3 = 0, n4 = 10){
+            soma =n1 + n2 + n3 + n4
+        return soma
+        }
+
+        function verificarpositivo(n1,n2,n3,n4){
+            if((n1<0) || (n2<0) || (n3<0) || (n4<0)){
+                negativo = "há pelo um numero negativo"
+                return negativo
+            }       
+            else{ 
+                negativo = "todos são positivos" 
+                return negativo
+            }          
+        }
+        function calcular(a, b, operador) {
+            switch (operador) {
+                case '+':
+                    return a + b;
+                case '-':
+                    return a - b;
+                case '*':
+                    return a * b;
+                case '/':
+                    return a / b;
+                default:
+                    return "Operador inválido";
+            }
+        }
+        function dataAtual(){
+            var dataAtual = new Date();
+            var dia = dataAtual.getDate();
+            var mes = (dataAtual.getMonth() + 1);
+            var ano = dataAtual.getFullYear();
+            var horas = dataAtual.getHours();
+            var minutos = dataAtual.getMinutes();
+        return ("Hoje é dia " + dia + "/" + mes + " de " + ano + ". Agora são " + horas + ":" + minutos + "h.")
+
+        }
+
+
+            n1= Number(prompt("Digite um valor" ))
+            n2= Number(prompt("Digite um valor" ))
+            n3= Number(prompt("Digite um valor" ))
+            n4= Number(prompt("Digite um valor" ))
+            window.alert("A soma dos valores passados é de " + somarVarios(n1,n2,n3,n4))
+            window.alert("Entre os valores informados " + verificarpositivo(n1,n2,n3,n4))
+            num1= Number(prompt("Digite um valor" ))
+            num2= Number(prompt("Digite um valor" ))
+            operador = prompt("Digite + para soma - para subtração * para multiplicação e / para divisão")
+            window.alert("O resultado da expressão solicitada é de " + calcular(num1, num2, operador))
+            window.alert(dataAtual())
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="exemplos">Integração do JS com HTML e CSS</h2>
+
+    <fieldset class="conteiner-exemplos">
+
+        <div class="conteiner-mensagem">
+
+            <h2 id="exemplo-lista">Lista</h2>
+
+            <label for="nome" class="item label">Nome</label>
+            <input id="nome" class="item campo" type="text" />
+        
+            <button id="btn-mensagem" class="item botao">Enviar</button>
+            <p>
+            <label for="mensagem" class="item label">Mensagem</label>
+            <p id="mensagem" class="item saida"></p>    
+
+            <ol id="lista" class="item"></ol>   
+
+
+            <div class="conteiner-calculadora">
+
+                <h2 id="exemplo-calculadora">Calculadora</h2>
+    
+                <label for="n1" class="item label">Primeiro número</label>
+                <input id="n1" class="item campo" type="text" />
+    
+                <label for="n2" class="item label">Segundo número</label>
+                <input id="n2" class="item campo" type="text" />
+        
+                <p class="label">Operações</p>
+                <div>
+                    <input type="radio" id="somar" name="operacoes" value="somar" checked/>
+                    <label for="somar">Somar</label>
+                </div>                                                                                    
+                <div>
+                    <input type="radio" id="subtrair" name="operacoes" value="subtrair" />
+                    <label for="subtrair">Subtrair</label>
+                </div>
+                <div>
+                    <input type="radio" id="multiplicar" name="operacoes" value="multiplicar" />
+                    <label for="multiplicar">Multiplicar</label>
+                </div>
+                <div>
+                    <input type="radio" id="dividir" name="operacoes" value="dividir" />
+                    <label for="dividir">Dividir</label>
+                </div>
+    
+                <button id="btn-calcular" class="item botao">Calcular</button>
+    
+                <button id="btn-limpar" class="item botao">Limpar</button>
+            
+                <label for="resultado" class="item label">Resultado</label>
+                <p id="resultado" class="item saida"></p>    
+    
+            </div>
+            <script>
+                let numero1 = document.getElementById("n1")
+                let numero2 = document.getElementById("n2")
+
+                let soma = document.getElementById(somar)
+                let subtrair = document.getElementById(subtrair)
+                let multiplicar = document.getElementById(multiplicar)
+                let dividir = document.getElementById(dividir)
+
+                ALERT(DIVIDIR())
+                
+            </script>
+        </body>
+
+</html>

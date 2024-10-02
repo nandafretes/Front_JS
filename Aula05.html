@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //===========================MAP==============================================/
+       /* const livros =["CSS", "HTML5", "JavaScript", "React", "PHP"]
+        let livros1 = livros.map((livro) =>"Livro " + livro);
+        let livros2 = livros.map((livro, index) =>"Livros " + index + " "+livro)
+
+        window.alert(livros);
+        window.alert(livros1);
+        window.alert(livros2);*/
+
+
+        
+        //===========================FILTER==============================================/
+        const livros =
+[
+    {id: 1, titulo: "HTML"}, 
+    {id: 2, titulo: "CSS"}, 
+    {id: 3, titulo: "JavaScript"}
+];
+let livros1 = livros.find((livro) => livro.id === 3);
+
+alert(livros1.titulo); // Você pode alertar o título do livro encontrado
+alert(livros1); // Você pode alertar o título do livro encontrado
+
+            
+    </script>
+
+</body>
+</html>

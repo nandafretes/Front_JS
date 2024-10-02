@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function somarVarios(n1, n2, n3 = 0, n4 = 10){
+            soma =n1 + n2 + n3 + n4
+        return soma
+        }
+
+        function verificarpositivo(n1,n2,n3,n4){
+            if((n1<0) || (n2<0) || (n3<0) || (n4<0)){
+                negativo = "há pelo um numero negativo"
+                return negativo
+            }       
+            else{ 
+                negativo = "todos são positivos" 
+                return negativo
+            }          
+        }
+        function calcular(a, b, operador) {
+            switch (operador) {
+                case '+':
+                    return a + b;
+                case '-':
+                    return a - b;
+                case '*':
+                    return a * b;
+                case '/':
+                    return a / b;
+                default:
+                    return "Operador inválido";
+            }
+        }
+        function dataAtual(){
+            var dataAtual = new Date();
+            var dia = dataAtual.getDate();
+            var mes = (dataAtual.getMonth() + 1);
+            var ano = dataAtual.getFullYear();
+            var horas = dataAtual.getHours();
+            var minutos = dataAtual.getMinutes();
+        return ("Hoje é dia " + dia + "/" + mes + " de " + ano + ". Agora são " + horas + ":" + minutos + "h.")
+        }
+
+
+        function contador(valor1){
+        for (contador = valor1; contador >= 0; contador--) {
+            console.log(`${contador}º iteração`)
+            
+            }
+            return contador
+        }      
+        const subtrair = function(n1, n2){
+            return n1 - n2
+        }
+
+        function somarVarios(n1 =0, n2=0, n3=0 , n4=0 ){
+            return n1 + n2 + n3 + n4
+        }
+
+        const dividirArrowComCorpo = (n1, n2) => {
+            return n1 / n2
+        }
+
+        // Arraw function (com uma linha de instrução)
+            const dividirArrow = (n1, n2) => n1 / n2
+
+            alert(dividirArrow(9, 2))
+
+
+        function fibonacciLoop(n) {
+            let a = 0;
+            let b = 1;
+            let temp;
+
+            if (n === 0) return a;
+            if (n === 1) return b;
+
+            for (let i = 2; i <= n; i++) {
+                temp = a + b;
+                a = b;
+                b = temp;
+                alert(b)
+            }
+            return b;
+        }
+
+// Exemplo de uso:
+n = prompt("Digite um valor")
+alert(fibonacciLoop(n)); // Mostra o décimo número de Fibonacci (55)
+
+
+
+    
+
+
+            //n1= Number(prompt("Digite um valor" ))
+            //n2= Number(prompt("Digite um valor" ))
+            //n3= Number(prompt("Digite um valor" ))
+            //n4= Number(prompt("Digite um valor" ))
+            //window.alert("A soma dos valores passados é de " + somarVarios(n1,n2,n3,n4))
+            //window.alert("Entre os valores informados " + verificarpositivo(n1,n2,n3,n4))
+            //num1= Number(prompt("Digite um valor" ))
+            //num2= Number(prompt("Digite um valor" ))
+            //operador = prompt("Digite + para soma - para subtração * para multiplicação e / para divisão")
+            //window.alert("O resultado da expressão solicitada é de " + calcular(num1, num2, operador))
+            //window.alert(dataAtual())
+            //valor1= Number(prompt("Digite um valor" ))
+            //window.alert(contador(valor1))         
+            //var dataAtual = new Date();
+            //var dia = alert(dataAtual.getDate());
+            //var mes = alert(dataAtual.getMonth() + 1);
+            //var ano = alert(dataAtual.getFullYear());
+            //var horas = alert(dataAtual.getHours());
+            //var minutos = alert(dataAtual.getMinutes());
+            //window.alert(subtrair(40,30))
+            //alert( somarVarios(2, 4, 6, 8, 10) )
+            //alert( somarVarios(2, 4, 6, 8) )
+            //alert (somarVarios(2, 4, 6) )
+            //alert( somarVarios(2, 4) )
+            //alert( dividirArrowComCorpo(10, 5) )
+    
+            
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Minha Aula04</title>
+</head>
+<body>
+    <h1>Minha Aula04</h1>
+    <div id='obs'>Minha 1 aula sobre DOM usando ID</div>
+    <div name='a'>Minha 1 aula sobre DOM usando name</div>
+    <div id='selector'>Minha div selector</div>
+
+    <form id='formulario'>
+        <label>Nome:</label>
+        <input type="text" value="nome" id="nome">
+        <label>Email:</label>
+        <input type="text" value="email" id="email">
+    </form>
+
+    <script>
+        // Pegar dados através do nome da tag
+        var h1 = window.document.getElementsByTagName('h1')[0]; // Pegando o primeiro elemento com a tag h1
+        var corpo = window.document.body;
+        h1.style.color = 'white'; // Coloca o texto em branco
+        corpo.style.background = 'blue'; // Coloca o fundo azul 
+
+        // Pegar um elemento do HTML pelo ID
+        var obs = window.document.getElementById('obs'); // Pega o elemento com o id OBS
+        obs.style.background = 'purple'; // Coloca o fundo roxo
+        obs.innerText = 'Obs, eu sou uma Div com id'; // Muda o texto pela programação
+
+        // Pegar um elemento pelo name
+        var a = window.document.getElementsByName('a')[0]; // Pega o primeiro elemento com o name a
+        a.style.background = 'pink'; // Coloca o fundo verde
+        a.innerText = 'Obs, div com name'; // Muda o texto pela programação
+
+        // Pegar o elemento pelo querySelector
+        var b = window.document.querySelector('div#selector');
+        b.style.background = 'red'; // Coloca o fundo vermelho
+        b.innerText = "Olá, eu sou o selector"; // Define o texto
+
+        // Adicionar evento de blur ao campo de email
+        var emailInput = document.getElementById("email");
+        emailInput.addEventListener('blur', validarEmail);
+
+        function validarEmail() {
+            var email = emailInput.value;
+            if (email.includes("@") && email.includes(".")) {
+                alert("Email válido!");
+            } else {
+                alert("Email inválido!");
+            }
+        } 
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function getRandomNonRepeating(min, max) {
+    let ganhou;
+    let numerosSorteados = [];
+    
+    do {
+        let numero;
+        do {
+            numero = Math.floor(Math.random() * (max - min + 1)) + min;
+        } while (numerosSorteados.includes(numero)); // Verifica se o número já foi sorteado
+        
+        alert(numero);
+        numerosSorteados.push(numero); // Adiciona o número sorteado à lista
+        
+        ganhou = prompt("Houve ganhador? Se Sim digite 's', se não, digite 'n'");
+        if (ganhou === 'n') {
+            continue; // Continua para a próxima iteração do loop
+        } else {
+            return "Parabéns, houve um vencedor!";
+        }
+    } while (ganhou === 'n');
+}
+
+const min = Number(prompt("Digite o valor mínimo:"));
+const max = Number(prompt("Digite o valor máximo:"));            
+alert(getRandomNonRepeating(min, max));
+
+                
+    </script>
+
+</body>
+</html>

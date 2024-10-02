@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ 
+
+        function getRandomArbitrary(min, max) {
+            let ganhou;
+            
+            do {
+                let numero = Number.parseInt(Math.random() * (max - min) + min);
+                alert(numero)
+
+                ganhou = prompt("Houve ganhador? Se Sim digite 's', se não, digite 'n'");
+                if (ganhou === 'n') {                    
+                    continue; // Continua para a próxima iteração do loop
+                } else {
+                    return "Parabéns, houve um vencedor!";
+                }
+            } while (ganhou === 'n');
+        }
+
+
+            const min = Number(prompt("Digite o valor mínimo:"));
+            const max = Number(prompt("Digite o valor máximo:"));            
+            window.alert(getRandomArbitrary(min, max))
+
+    </script>
+
+</body>
+</html>
